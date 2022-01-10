@@ -1,0 +1,20 @@
+//  https://practice.geeksforgeeks.org/problems/rotate-by-90-degree0356/1/
+
+
+void rotate(int n,int a[][n])
+{
+    //code here
+    int res[n][n];
+    int id  = 0;
+    for(int i=n-1;i>=0;i--){
+        for(int j=0;j<n;j++){
+            res[id][j] = a[j][i];
+        }
+        id++;
+    }
+     for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            a[i][j] = res[i][j];
+        }
+    }
+}
