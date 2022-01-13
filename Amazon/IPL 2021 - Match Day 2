@@ -1,0 +1,20 @@
+class solution {public:
+    vector<int> max_of_subarrays(vector<int> arr, int n, int k) {
+        // your code here
+        vector<int> ans ;
+      int start = 0 ;
+      int end = k-1 ;
+      priority_queue<int> mx ;
+      while(end != n){
+          for(int i = start ; i<=end ; i++){
+              mx.push(arr[i]);
+          }
+          ans.push_back(mx.top());
+          mx.pop();
+          
+          start ++ ;
+          end ++ ;
+      }
+      return ans ;
+    }
+};
